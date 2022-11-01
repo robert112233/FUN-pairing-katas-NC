@@ -12,6 +12,14 @@
 ], 'root') should return 9
 */
 
-function countVeg() {}
+function countVeg(arr, type) {
+  let vegCount = 0;
+  arr.forEach((obj) => {
+    if (obj.type === type) {
+      vegCount += obj.quantity;
+    }
+  });
+  return vegCount;
+}
 
 module.exports = countVeg;

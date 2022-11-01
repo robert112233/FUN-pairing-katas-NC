@@ -1,4 +1,21 @@
-const sumDigits = require('../katas/sum-digits');
+const sumDigits = require("../katas/sum-digits");
+
+describe("sumDigits", () => {
+  test("When passed a single digit, the same digit is returned", () => {
+    expect(sumDigits(1)).toBe(1);
+    expect(sumDigits(9)).toBe(9);
+  });
+  test("When passed a number with multiple digits, the sum of those digits is returned", () => {
+    expect(sumDigits(11)).toBe(2);
+    expect(sumDigits(83984)).toBe(32);
+  });
+  test("When passed a number containing incorrect datatypes, the sum of the digits are returned", () => {
+    expect(sumDigits(1.1)).toBe(2);
+  });
+  test("When passed an incorrect datatype, the function will return undefined", () => {
+    expect(sumDigits([1, 2, 3])).toBe(undefined);
+  });
+});
 
 // Tests for sumDigits
 

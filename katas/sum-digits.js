@@ -7,6 +7,17 @@
     --> 6
 */
 
-function sumDigits() {}
+function sumDigits(num) {
+  if (typeof num === "number") {
+    const strNum = num.toString();
+    let newNum = 0;
+    for (let i = 0; i < strNum.length; i++) {
+      if (parseInt(strNum[i])) {
+        newNum += parseInt(strNum[i]);
+      }
+    }
+    return newNum;
+  }
+}
 
 module.exports = sumDigits;
