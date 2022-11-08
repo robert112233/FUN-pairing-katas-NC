@@ -25,6 +25,8 @@
 //   return a / b;
 // }
 
-function curry() {}
+function curry(func, arg) {
+  return (nextArg) => func(arg, nextArg);
+}
 
 module.exports = curry;

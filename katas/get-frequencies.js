@@ -12,6 +12,20 @@
   }
 */
 
-function getFrequencies() {}
+function getFrequencies(str) {
+  let charObj = {};
+  charArr = str.split("");
+
+  charArr.forEach((char) => {
+    let count = 0;
+    for (let i = 0; i < charArr.length; i++) {
+      if (charArr[i] === char) {
+        count++;
+      }
+    }
+    charObj[char] = count;
+  });
+  return charObj;
+}
 
 module.exports = getFrequencies;

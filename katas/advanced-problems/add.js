@@ -5,6 +5,8 @@ var add8 = add(8)
 add8(2) --> 10
 */
 
-function add() {}
+function add(num1) {
+  return (num2) => num1 + num2;
+}
 
 module.exports = add;

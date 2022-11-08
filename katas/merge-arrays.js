@@ -5,6 +5,21 @@
   [1, 2, 3, 4, 5] and ['a', 'b', 'c'] --> [1, 'a', 2, 'b', 3, 'c', 4, 5]
 */
 
-function mergeArrays() {}
+function mergeArrays(arr1, arr2) {
+  let longArr = arr1;
+  let shortArr = arr2;
+  bothArr = [];
+
+  if (arr1.length < arr2.length) {
+    longArr = arr2;
+    shortArr = arr1;
+  }
+
+  for (let i = 0; i < longArr.length; i++) {
+    if (longArr[i]) bothArr.push(longArr[i]);
+    if (shortArr[i]) bothArr.push(shortArr[i]);
+  }
+  return bothArr;
+}
 
 module.exports = mergeArrays;

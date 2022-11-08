@@ -5,6 +5,28 @@
   This is because h and e are in 'hello' but not in 'world', and w, r and d are in 'world' but not in 'hello'. hewrd' sorted => 'dehrw'
 */
 
-function getDistinctLetters() {}
+function getDistinctLetters(str1, str2) {
+  str1Arr = str1.split("");
+  str2Arr = str2.split("");
+
+  uniqueArr = [];
+
+  str1Arr.forEach((letter) => {
+    if (!str2Arr.includes(letter)) {
+      uniqueArr.push(letter);
+    }
+  });
+
+  str2Arr.forEach((letter) => {
+    if (!str1Arr.includes(letter)) {
+      uniqueArr.push(letter);
+    }
+  });
+
+  sortedUnique = uniqueArr.sort();
+  return sortedUnique.toString().replaceAll(",", "");
+}
 
 module.exports = getDistinctLetters;
+
+// beasts.indexOf(letter);
